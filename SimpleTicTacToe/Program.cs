@@ -10,9 +10,9 @@ while (true)
 
     Console.WriteLine($"Player {currentPlayer}, enter a number from 1 to 9:");
 
-    int move = int.Parse(Console.ReadLine());
-
-    if (move < 1 || move > 9)
+    string input = Console.ReadLine();
+    int move;
+    if (!int.TryParse(input, out move) || move < 1 || move > 9)
     {
         Console.WriteLine("Invalid move! Enter a number from 1 to 9.");
         Thread.Sleep(1500);
